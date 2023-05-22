@@ -23,7 +23,7 @@
       --header 'Content-Type: application/json' \
 ```
 
-```curl
+```curl 
  curl --request PUT \
       --url http://localhost:8080/bank/account-2ce9d302-b894-4dbd-9475-d9a3fc68c85c \
       --header 'Content-Type: application/json' \
@@ -33,4 +33,19 @@
         "currency": "USD", 
         "amount": -16
       }'
+```
+
+## relevant docker commands:
+```docker
+    docker ps
+    docker exec -it <image-id> cqlsh
+```
+
+## relevant cqrl queries:
+```sql
+    DESC keyspaces;
+    DESC tables;
+    select * from akka.messages;
+    select persistence_id, partition_nr, sequence_nr, timestamp from akka.messages;
+    truncate akka.messages;
 ```
